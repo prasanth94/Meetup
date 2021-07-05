@@ -2,6 +2,7 @@ import EventSummary from '../../components/event-detail/event-summary'
 import EventLogistics from '../../components/event-detail/event-logistics'
 import EventContent from '../../components/event-detail/event-content'
 import { getEventById, getFeaturedEvents } from '../../helpers/api-utils'
+import Comments from '../../components/input/comments'
 
 export default function EventDetailsPage(props) {
   const event = props.selectedEvent
@@ -22,6 +23,7 @@ export default function EventDetailsPage(props) {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </>
   )
 }
